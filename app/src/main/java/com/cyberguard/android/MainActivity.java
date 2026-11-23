@@ -111,7 +111,7 @@ public class MainActivity extends Activity {
         addInfo("Wi-Fi",currentSsid()); addInfo("Signal",currentSignal()); addInfo("IP address",currentIp());
         section("GOOD TO KNOW"); noteCard("Your privacy matters","Scans are processed on your phone. The app does not try to access other people's devices or networks.");
     }
-    private TextView stat(String value,String label,int color){TextView t=text(value+"\\n"+label,15,color,true);t.setGravity(Gravity.CENTER);t.setPadding(dp(8),dp(10),dp(8),dp(10));t.setBackground(round(PANEL2,Color.rgb(39,69,79),dp(10)));return t;}
+    private TextView stat(String value,String label,int color){TextView t=text(value+"\n"+label,15,color,true);t.setGravity(Gravity.CENTER);t.setPadding(dp(8),dp(10),dp(8),dp(10));t.setBackground(round(PANEL2,Color.rgb(39,69,79),dp(10)));return t;}
     private void wifiPage(){
         status=text("Ready to scan nearby access points.",12,GREEN,true); panel(status);
         Button scan=primary("START WI-FI SCAN"); scan.setOnClickListener(v->beginScan()); body.addView(scan,margin(0,dp(12),0,dp(12)));
