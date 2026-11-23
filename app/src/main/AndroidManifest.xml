@@ -8,11 +8,11 @@
     <application
         android:allowBackup="true"
         android:label="CyberGuard"
+        android:icon="@drawable/ic_cyberguard"
+        android:roundIcon="@drawable/ic_cyberguard"
         android:theme="@android:style/Theme.Material.NoActionBar"
         android:usesCleartextTraffic="false">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+        <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

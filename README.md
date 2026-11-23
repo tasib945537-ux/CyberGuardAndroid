@@ -1,25 +1,29 @@
 # CyberGuard Android
 
-A lightweight Wi-Fi awareness helper for Android 6.0+ (tested build target: Android 11 / API 30 devices).
+CyberGuard is a lightweight, defensive Wi-Fi awareness dashboard for Android phones.
 
-## Features
-- Scan nearby Wi-Fi access points and view SSID, signal strength, frequency, and advertised security type.
-- View the current Wi-Fi connection's reported signal, link speed, frequency, IP, gateway, subnet, and DNS where Android exposes them.
-- Show a local notification when a scan observes a new access point during the current app session.
-- Simple dark interface designed for low-to-mid-range Android phones.
+## Current features
+- Premium dark security-console interface with custom CyberGuard launcher icon.
+- Home dashboard and separate Wi-Fi, Network, Security Check, Activity Logs, and About pages.
+- Nearby Wi-Fi scan showing SSID, advertised security, signal strength, and frequency.
+- Current connection overview with IP, gateway, subnet, DNS, RSSI, frequency, and link speed where Android exposes them.
+- New access-point notifications during the current app session.
+- Security guidance and permission checks.
+- Designed to remain compatible with Android 11 devices and low-to-mid-range phones.
 
 ## Build
-- JDK 17
-- Gradle 8.9
-- Android Gradle Plugin 8.7.3
+- JDK 17, Gradle 8.9, Android Gradle Plugin 8.7.3
 - Run: `gradle assembleDebug`
 - APK: `app/build/outputs/apk/debug/app-debug.apk`
+- GitHub Actions builds a debug APK on pushes to `main`; download it from the workflow run Artifacts section.
 
-GitHub Actions builds a debug APK on pushes to `main` and on manual workflow dispatch. Download it from the run's Artifacts section.
+## Android limitations
+- Android 11 requires Location permission and Location services for nearby Wi-Fi scan results.
+- Android can throttle scans; results may be cached or unavailable.
+- Some connection details are restricted by Android and device vendors.
+- Ordinary third-party apps cannot reliably list every router or hotspot client on all devices.
+- Scan history is session-only in this release and clears when the app process ends.
+- This app is a network-awareness helper, not antivirus, a penetration-testing tool, or a guarantee that a network is safe.
 
-## Android permissions and limitations
-- Nearby Wi-Fi scan results on Android 11 require Location permission and Location services enabled.
-- Android may throttle Wi-Fi scans; results can be cached or unavailable between permitted scans.
-- Some connection details are redacted by Android depending on OS version and permission state.
-- Android does not provide ordinary third-party apps with a reliable universal way to enumerate every device connected to a router or the phone's hotspot. Hotspot-client monitoring is not included.
-- This is a network-awareness utility, not antivirus, a penetration-testing tool, or a guarantee that a network is safe.
+## Safe use
+Use the app only to inspect your own device and networks you are authorized to manage. CyberGuard does not attempt to access, disrupt, or exploit other devices or networks.
