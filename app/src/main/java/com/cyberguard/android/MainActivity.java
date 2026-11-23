@@ -95,8 +95,7 @@ public class MainActivity extends Activity {
         }
     }
     private void homePage(){
-        card(body, PANEL, 18, v->showPage("SECURITY"));
-        LinearLayout hero=(LinearLayout)body.getChildAt(body.getChildCount()-1); hero.setPadding(dp(18),dp(18),dp(18),dp(18));
+        LinearLayout hero=new LinearLayout(this); hero.setOrientation(LinearLayout.VERTICAL); hero.setPadding(dp(18),dp(18),dp(18),dp(18)); hero.setBackground(round(PANEL,GREEN,dp(18))); body.addView(hero,margin(0,0,0,dp(12)));
         hero.addView(text("SYSTEM STATUS",10,GREEN,true));
         hero.addView(text("Stay aware. Stay protected.",21,WHITE,true),margin(0,dp(7),0,dp(5)));
         hero.addView(text("CyberGuard helps you understand nearby Wi-Fi and the network your phone is using.",12,MUTED,false));
